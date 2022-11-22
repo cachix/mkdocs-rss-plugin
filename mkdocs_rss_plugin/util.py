@@ -70,9 +70,6 @@ class Util:
             logging.warning(f"[rss-plugin] Git issue: {err}")
             self.git_is_valid = 0
 
-        # Checks if user is running builds on CI and raise appropriate warnings
-        CiHandler(git_repo.git).raise_ci_warnings()
-
     def build_url(self, base_url: str, path: str, args_dict: dict = None) -> str:
         """Build URL using base URL, cumulating existing and passed path, \
         then adding URL arguments.
